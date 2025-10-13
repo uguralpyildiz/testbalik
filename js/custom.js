@@ -1,3 +1,20 @@
+const sepetbob = document.querySelector(".sepetbob");
+const addcart = document.querySelectorAll(".addcart");
+
+// localStorage'dan mevcut sayıyı al (yoksa 0 başlat)
+let sepetCount = parseInt(localStorage.getItem("sepetCount")) || 0;
+
+// Sayfa ilk açıldığında mevcut sayıyı göster
+sepetbob.innerHTML = `${sepetCount} Ürün`;
+
+addcart.forEach(btn => {
+	btn.addEventListener("click", () => {
+		sepetCount++;
+		sepetbob.innerHTML = `${sepetCount} Ürün`;
+		localStorage.setItem("sepetCount", sepetCount); // kaydet
+	});
+});
+
 (function() {
 	'use strict';
 
