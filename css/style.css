@@ -1102,16 +1102,40 @@ margin-bottom: 0;
     font-size: 13px !important;
 }
 
-.kategoriler:hover .kategoriler-list{
+.kategoriler:active .kategoriler-list{
   
   transform: scale(1);
 
 }
+.kategoriler:hover .kategoriler-list{
+  
+  transform: scale(1) !important;
+
+}
+
+
+.kategoriler.aktif .kategoriler-list {
+  transform: scale(1) !important;
+}
+
 
 @media screen and (max-width:678px) {
   .kategoriler-list{
+    position: relative;
     display: none;
-   
+    flex-wrap: wrap;
+    width: 100%;
+    box-shadow: 0 0 0 0;
+    padding: 5px;
+    background: #00000020;
+  }
+    .kategoriler:hover .kategoriler-list {
+      display: flex;
+      transform: scale(1);
+  
+    }
+  .kategoriler-list a{
+    width: 50%;
   }
     .custom-navbar{
       padding-top: 7px;
@@ -1121,10 +1145,29 @@ margin-bottom: 0;
       margin-top: 20px !important;
     }
 }
+.sepetbo{
+  position: relative;
+}
+.toggler-icon-fl{
+  position: relative;
+  display: flex;
+  align-items: center;
 
+}
 .sepetbob{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  position: absolute;
+  top: 0;
+  right: -5px;
   color: #fff;
-  margin-left: 5px;
+  background: red;
+  height: 21px;
+  width: 21px;
+  border-radius: 50%;
+  font-size: 12px;
 }
 
 .w50-container{

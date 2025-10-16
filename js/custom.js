@@ -5,14 +5,18 @@ const addcart = document.querySelectorAll(".addcart");
 let sepetCount = parseInt(localStorage.getItem("sepetCount")) || 0;
 
 // Sayfa ilk açıldığında mevcut sayıyı göster
-sepetbob.innerHTML = `${sepetCount} Ürün`;
+sepetbob.innerHTML = `${sepetCount}`;
 
 addcart.forEach(btn => {
 	btn.addEventListener("click", () => {
 		sepetCount++;
-		sepetbob.innerHTML = `${sepetCount} Ürün`;
+		sepetbob.innerHTML = `${sepetCount}`;
 		localStorage.setItem("sepetCount", sepetCount); // kaydet
 	});
+});
+const btn = document.querySelector('.kategorilerbtn');
+btn.addEventListener('click', () => {
+	btn.classList.toggle('aktif');
 });
 
 (function() {
