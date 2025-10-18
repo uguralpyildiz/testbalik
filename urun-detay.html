@@ -35,6 +35,9 @@
 	<link href="css/tiny-slider.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<title>İbrahim Çarkcı | Balıkçılık Malzemeleri</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
 
 <body>
@@ -67,6 +70,7 @@
 					src="logo.jpg" alt="logo">
 				İbrahim Çarkcı <laylaylom class="m-title-s">| Balıkçılık Malzemeleri</laylaylom>
 			</a>
+
 			<div class="collapse navbar-collapse" id="navbarsFurni">
 				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 					<li class="nav-item ">
@@ -108,6 +112,7 @@
 			
 			
 			</div>
+
 			<div class="toggler-icon-fl">
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
 						aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,125 +128,364 @@
 		</div>
 
 	</nav>
-	<!-- End Header/Navigation -->
 
-	<!-- Start Hero Section -->
-	<div class="hero" style="min-height: 150px !important; height: 150px;">
-		<div class="container">
-			<div class="row justify-content-between">
-				<div class="col-lg-8">
-					<div class="intro-excerpt">
-						<h1>Kategoriler </h1>
+<style>
+	.swiper {
+		max-width: 600px;
+		
+		border-radius: 10px;
+		overflow: hidden;
+		border: 2px solid #223a5850;
+		box-shadow: 0 0 15px #00000010;
+	}
+
+	.swiper-slide {
+		text-align: center;
+		background: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+	}
+
+	.swiper-slide img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.4s ease;
+		cursor: zoom-in;
+	}
+
+	.swiper-slide img:hover {
+		transform: scale(1.05);
+	}
+
+	.product-info {
+		margin-top: 40px;
+	}
+
+	.product-title {
+		font-size: 28px;
+		font-weight: 700;
+	}
+
+.tab-content {
+      background: #fff;
+      border: 1px solid #223a5880;
+      border-top: none;
+      padding: 25px;
+      border-radius: 0 0 8px 8px;
+    }
+	.nav-tabs{
+		
+		border-bottom: 1px solid #223a5880;
+	}
+    .nav-tabs .nav-link {
+      font-weight: 500;
+      color: #353535;
+    }
+    .nav-tabs .nav-link.active {
+      color: #223a58;
+      border-color: #223a5880 #223a5880 #fff;
+    }
+
+.tab-pane{
+	color: #353535 !important;
+}
+</style>
+
+<div class="container py-5">
+	<div class="row">
+		<!-- Ürün Görsel Slider -->
+		<div class="col-lg-6">
+			<div class="swiper mySwiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a href="fotog/1.png" class="glightbox" data-gallery="urun-gallery">
+							<img src="fotog/1.png" alt="">
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="fotog/20.png" class="glightbox" data-gallery="urun-gallery">
+							<img src="fotog/20.png" alt="">
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="fotog/14.png" class="glightbox" data-gallery="urun-gallery">
+							<img src="fotog/14.png" alt="">
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="fotog/8.png" class="glightbox" data-gallery="urun-gallery">
+							<img src="fotog/8.png" alt="">
+						</a>
 					</div>
 				</div>
-				
+				<div class="swiper-pagination"></div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
 			</div>
 		</div>
-	</div>
-	<!-- End Hero Section -->
 
-	<div class="w50-container">
-		<div class="untree_co-section product-section before-footer-section w50re">
-			<div class="container category-32KK">
-				<h1 class="c-title"><span> K Serisi Çapariler</span> <a href="">Kategoriyi İncele <img width="30" height="30"
-							src="https://img.icons8.com/ios/223a58/50/right--v1.png" alt="right--v1" /></a></h1>
-		
-				<p style="height: 150px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt obcaecati quas quos harum necessitatibus
-					sint delectus nihil velit animi perferendis.</p>
-		
+		<!-- Ürün Bilgileri -->
+		<div class="col-lg-6 product-info">
+			<h1 class="product-title">K1 Kıyı Çaparisi</h1>
+			<div class="mb-2">
+				<img width="18" height="18" src="https://img.icons8.com/ios-filled/ff8800/50/star--v1.png">
+				<img width="18" height="18" src="https://img.icons8.com/ios-filled/ff8800/50/star--v1.png">
+				<img width="18" height="18" src="https://img.icons8.com/ios-filled/ff8800/50/star--v1.png">
+				<img width="18" height="18" src="https://img.icons8.com/ios-filled/ff8800/50/star--v1.png">
+				<img width="18" height="18" src="https://img.icons8.com/ios-filled/ff8800/50/star--v1.png">
+				<span class="ms-2 text-muted">(138)</span>
 			</div>
-		
-		</div>
-		<div class="untree_co-section product-section before-footer-section w50re">
-			<div class="container category-32KK">
-				<h1 class="c-title"><span> T Serisi Çapariler</span> <a href="t-serisi.html">Kategoriyi İncele <img width="30"
-							height="30" src="https://img.icons8.com/ios/223a58/50/right--v1.png" alt="right--v1" /></a></h1>
-				<p style="height: 150px;">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sequi ipsum alias vel laborum ex asperiores
-					blanditiis inventore tempore odio! Quisquam pariatur officia enim quidem eum error accusamus corrupti ipsam
-					tempore provident iusto, fuga adipisci?
-				</p>
+			<p class="text-muted">Kıyıdan etkili avlar için dengeli ve güçlü çapari Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quia dolor ratione atque quisquam eveniet.</p>
+			
+
+			<div class="cart-section-blabla" style="flex-direction: row;">
+				<span class="product-price">59.90 TL</span>
+				<span class="product-price addcart catalog2">Sepete Ekle <img width="18" height="18" src="images/cart.svg"></span>
 			</div>
-		
-		</div>
-		<div class="untree_co-section product-section before-footer-section w50re">
-			<div class="container category-32KK">
-				<h1 class="c-title"><span> P Serisi Çapariler</span> <a href="t-serisi.html">Kategoriyi İncele <img width="30"
-							height="30" src="https://img.icons8.com/ios/223a58/50/right--v1.png" alt="right--v1" /></a></h1>
-				<p style="height: 150px;">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sequi ipsum alias vel laborum ex asperiores
-					blanditiis inventore tempore odio! Quisquam pariatur officia enim quidem eum error accusamus corrupti ipsam
-					tempore provident iusto, fuga adipisci?
-				</p>
-			</div>
-		
-		</div>
-		<div class="untree_co-section product-section before-footer-section w50re">
-			<div class="container category-32KK">
-				<h1 class="c-title"><span> C Serisi Çapariler</span> <a href="t-serisi.html">Kategoriyi İncele <img width="30"
-							height="30" src="https://img.icons8.com/ios/223a58/50/right--v1.png" alt="right--v1" /></a></h1>
-				<p style="height: 150px;">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sequi ipsum alias vel laborum ex asperiores
-					blanditiis inventore tempore odio! Quisquam pariatur officia enim quidem eum error accusamus corrupti ipsam
-					tempore provident iusto, fuga adipisci?
-				</p>
-			</div>
-		
-		</div>
-		<div class="untree_co-section product-section before-footer-section w50re">
-			<div class="container category-32KK">
-				<h1 class="c-title"><span> S Serisi Çapariler</span> <a href="t-serisi.html">Kategoriyi İncele <img width="30"
-							height="30" src="https://img.icons8.com/ios/223a58/50/right--v1.png" alt="right--v1" /></a></h1>
-				<p style="height: 150px;">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sequi ipsum alias vel laborum ex asperiores
-					blanditiis inventore tempore odio! Quisquam pariatur officia enim quidem eum error accusamus corrupti ipsam
-					tempore provident iusto, fuga adipisci?
-				</p>
-			</div>
-		
-		</div>
-		<div class="untree_co-section product-section before-footer-section w50re">
-			<div class="container category-32KK">
-				<h1 class="c-title"><span> L Serisi Çapariler</span> <a href="t-serisi.html">Kategoriyi İncele <img width="30"
-							height="30" src="https://img.icons8.com/ios/223a58/50/right--v1.png" alt="right--v1" /></a></h1>
-				<p style="height: 150px;">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sequi ipsum alias vel laborum ex asperiores
-					blanditiis inventore tempore odio! Quisquam pariatur officia enim quidem eum error accusamus corrupti ipsam
-					tempore provident iusto, fuga adipisci?
-				</p>
-			</div>
-		
-		</div>
-		<div class="untree_co-section product-section before-footer-section w50re">
-			<div class="container category-32KK">
-				<h1 class="c-title"><span> Y Serisi Çapariler</span> <a href="t-serisi.html">Kategoriyi İncele <img width="30"
-							height="30" src="https://img.icons8.com/ios/223a58/50/right--v1.png" alt="right--v1" /></a></h1>
-				<p style="height: 150px;">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sequi ipsum alias vel laborum ex asperiores
-					blanditiis inventore tempore odio! Quisquam pariatur officia enim quidem eum error accusamus corrupti ipsam
-					tempore provident iusto, fuga adipisci?
-				</p>
-			</div>
-		
-		</div>
-		<div class="untree_co-section product-section before-footer-section w50re">
-			<div class="container category-32KK">
-				<h1 class="c-title"><span> SL Serisi Çapariler</span> <a href="t-serisi.html">Kategoriyi İncele <img width="30"
-							height="30" src="https://img.icons8.com/ios/223a58/50/right--v1.png" alt="right--v1" /></a></h1>
-				<p style="height: 150px;">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sequi ipsum alias vel laborum ex asperiores
-					blanditiis inventore tempore odio! Quisquam pariatur officia enim quidem eum error accusamus corrupti ipsam
-					tempore provident iusto, fuga adipisci?
-				</p>
-			</div>
-		
+
+				<!-- TAB MENU -->
+				<div class="row mt-5">
+					<div class="col-12">
+						<ul class="nav nav-tabs" id="productTab" role="tablist">
+							<li class="nav-item" role="presentation">
+								<button class="nav-link active" id="detay-tab" data-bs-toggle="tab" data-bs-target="#detay"
+									type="button" role="tab">Ürün Detayı</button>
+							</li>
+							<li class="nav-item" role="presentation">
+								<button class="nav-link" id="yorum-tab" data-bs-toggle="tab" data-bs-target="#yorumlar" type="button"
+									role="tab">Yorumlar</button>
+							</li>
+						</ul>
+				
+						<div class="tab-content" id="productTabContent">
+							<!-- ÜRÜN DETAY -->
+							<div class="tab-pane fade show active" id="detay" role="tabpanel">
+								<h5>Ürün Açıklaması</h5>
+								<p>
+									K1 Kıyı Çaparisi, profesyonel ve amatör balıkçılar için özel olarak tasarlanmış yüksek
+									performanslı bir üründür.
+									Dayanıklı ipek yapısı ve dengeli dizaynı sayesinde kıyıdan etkili avlar yapmanızı sağlar.
+								</p>
+								<ul>
+									<li>Paslanmaz iğneler</li>
+									<li>UV reflektörlü tüy</li>
+									<li>Dayanıklı misina bağlantısı</li>
+								</ul>
+							</div>
+				
+							<!-- YORUMLAR -->
+							<div class="tab-pane fade" id="yorumlar" role="tabpanel">
+								<h5>Kullanıcı Yorumları</h5>
+				
+								<div class="border-bottom pb-3 mb-3">
+									<strong>Ali T.</strong> - <span class="text-warning">★★★★★</span>
+									<p class="mb-0 text-muted">Gerçekten beklediğimden kaliteli geldi, tavsiye ederim.</p>
+								</div>
+				
+								<div class="border-bottom pb-3 mb-3">
+									<strong>Mehmet D.</strong> - <span class="text-warning">★★★★☆</span>
+									<p class="mb-0 text-muted">Malzeme güzel ama kargo biraz geç geldi.</p>
+								</div>
+				
+								<form class="mt-4">
+									<h6>Yorum Yap</h6>
+									<div class="mb-3">
+										<label class="form-label">Adınız</label>
+										<input type="text" class="form-control" placeholder="Adınızı girin">
+									</div>
+									<div class="mb-3">
+										<label class="form-label">Yorumunuz</label>
+										<textarea class="form-control" rows="3" placeholder="Deneyiminizi paylaşın"></textarea>
+									</div>
+									<button type="submit" class="btn btn-dark">Gönder</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
 		</div>
 	</div>
-	
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+	var swiper = new Swiper(".mySwiper", {
+		loop: true,
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+	});
+
+	const lightbox = GLightbox({
+		selector: '.glightbox',
+		touchNavigation: true,
+		loop: true,
+		zoomable: true,
+		openEffect: 'fade',
+		closeEffect: 'fade'
+	});
+</script>
+
+
+
+<div id="kanca7" class="untree_co-section product-section before-footer-section animsyonfuture">
+	<div class="container category-32KK">
+		<div class="row">
+			<h1 class="c-title"><span>Diğer Ürünlerimiz</span></h1>
+
+			<!-- Start Column 1 -->
+			<div class="col-12 col-md-4 col-lg-3 mb-5 ">
+				<a class="product-item " href="urun-detay.html">
+					<div class="catalog">
+						<img src="fotog/20.png" class="img-fluid product-thumbnail " style="border-radius: 5px;">
+					</div>
+					<div class="star-area">
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						(138)
+					</div>
+					<h3 class="product-title">K1 Kıyı Çaparisi </h3>
+					<p class="product-title-alt">Kıyıdan etkili avlar için dengeli ve güçlü çapari</p>
+
+					<div class="cart-section-blabla">
+						<span class="product-price">59.90 TL</span>
+						<span class="product-price addcart catalog2">Sepete Ekle <img width="18" height="18"
+								src="images/cart.svg"></span>
+					</div>
+
+
+				</a>
+			</div>
+			<div class="col-12 col-md-4 col-lg-3 mb-5 ">
+				<a class="product-item " href="urun-detay.html">
+					<div class="catalog">
+						<img src="fotog/20.png" class="img-fluid product-thumbnail " style="border-radius: 5px;">
+					</div>
+					<div class="star-area">
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						(138)
+					</div>
+					<h3 class="product-title">K1 Kıyı Çaparisi </h3>
+					<p class="product-title-alt">Kıyıdan etkili avlar için dengeli ve güçlü çapari</p>
+
+					<div class="cart-section-blabla">
+						<span class="product-price">59.90 TL</span>
+						<span class="product-price addcart catalog2">Sepete Ekle <img width="18" height="18"
+								src="images/cart.svg"></span>
+					</div>
+
+
+				</a>
+			</div>
+			<!-- End Column 1 -->
+			<!-- Start Column 1 -->
+			<div class="col-12 col-md-4 col-lg-3 mb-5 ">
+				<a class="product-item " href="urun-detay.html">
+					<div class="catalog">
+						<img src="fotog/14.png" class="img-fluid product-thumbnail " style="border-radius: 5px;">
+					</div>
+					<div class="star-area">
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						(138)
+					</div>
+					<h3 class="product-title">K2 Kıyı Çaparisi </h3>
+					<p class="product-title-alt">Uzak atış ve yüksek yakalama oranı sunar
+					</p>
+
+					<div class="cart-section-blabla">
+						<span class="product-price">59.90 TL</span>
+						<span class="product-price addcart catalog2">Sepete Ekle <img width="18" height="18"
+								src="images/cart.svg"></span>
+					</div>
+
+
+				</a>
+			</div>
+			<!-- End Column 1 -->
+			<!-- Start Column 1 -->
+			<div class="col-12 col-md-4 col-lg-3 mb-5 ">
+				<a class="product-item " href="urun-detay.html">
+					<div class="catalog">
+						<img src="fotog/1.png" class="img-fluid product-thumbnail " style="border-radius: 5px;">
+					</div>
+					<div class="star-area">
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						<img width="15" height="15" src="https://img.icons8.com//ios-filled/ff8800/50/star--v1.png"
+							alt="star--v1" />
+						(138)
+					</div>
+					<h3 class="product-title">K3 Kıyı Çaparisi </h3>
+					<p class="product-title-alt">Kıyı balıkçılığına özel, dayanıklı tasarım
+					</p>
+
+					<div class="cart-section-blabla">
+						<span class="product-price">59.90 TL</span>
+						<span class="product-price addcart catalog2">Sepete Ekle <img width="18" height="18"
+								src="images/cart.svg"></span>
+					</div>
+
+
+				</a>
+			</div>
+			<!-- End Column 1 -->
+			
+
+
+
+		</div>
+	</div>
+
+</div>
+
 
 
 	<!-- Start Footer Section -->
-	<footer class="footer-section" style="margin-top: 50px;">
+	<footer class="footer-section">
 		<div class="container relative">
 	
 			<div class="wp-ab2">

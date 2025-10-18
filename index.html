@@ -34,6 +34,7 @@
 		<link href="css/tiny-slider.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 		<title>İbrahim Çarkcı | Balıkçılık Malzemeleri</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 	</head>
 
 	<body>
@@ -117,7 +118,7 @@
 					</button>
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
 					
-						<li><a class="nav-link sepetbo" href="cart.html"><img src="images/cart.svg"><span class="sepetbob">0</span></a></li>
+						<li><a class="nav-link sepetbo" href="sepetim.html"><img src="images/cart.svg"><span class="sepetbob">0</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -125,41 +126,143 @@
 		</nav>
 
 		
+		
+		<!-- Demo styles -->
+		<style>
+			
+		
+			.swiper {
+				width: 100%;
+				height: 500px;
+			}
+		
+			.swiper-slide {
+				background-position: center;
+				background-size: cover;
+			}
+		
+			.swiper-slide img {
+				display: block;
+				width: 100%;
+			}
+		</style>
+		
 		<!-- End Header/Navigation -->
 
-		<!-- Start Hero Section -->
-			<!-- HERO SECTION -->
-			<div class="hero position-relative">
-			
-				<!-- Background Video -->
-				<video autoplay muted loop playsinline class="hero-bg-video">
-					<source src="veo.mp4" type="video/mp4">
-					Tarayıcınız video etiketini desteklemiyor.
-				</video>
-			
-				<!-- Overlay (optional: koyuluk efekti) -->
-				<div class="hero-overlay"></div>
-			
-				<!-- Content -->
-				<div class="container position-relative z-2">
-					<div class="row justify-content-between">
-						<div class="col-lg-8">
-							<div class="intro-excerpt">
-								<h1>Doğru Malzeme, <span class="d-block">Daha Fazla Balık</span></h1>
-								<p class="mb-4">
-									İbrahim Çarkcı’da sadece işine yarayan, sahada kanıtlanmış balıkçı malzemeleri bulursun. Uzun
-									laf yok, kaliteli ekipman var.
-								</p>
-								<p>
-									<a href="" class="btn btn-secondary me-2">Ürünleri Keşfet</a>
-									<a  class="btn btn-white-outline">İletişim</a>
-								</p>
+		<!-- Swiper -->
+		<div class="swiper mySwiper">
+			<div class="swiper-wrapper">
+				
+				<div class="swiper-slide">
+					<div class="hero position-relative">
+					
+						<!-- Background Video -->
+						<video autoplay muted loop playsinline class="hero-bg-video">
+							<source src="veo.mp4" type="video/mp4">
+							Tarayıcınız video etiketini desteklemiyor.
+						</video>
+					
+						<!-- Overlay (optional: koyuluk efekti) -->
+						<div class="hero-overlay"></div>
+					
+						<!-- Content -->
+						<div class="container position-relative z-2">
+							<div class="row justify-content-between">
+								<div class="col-lg-8">
+									<div class="intro-excerpt">
+										<h1>Doğru Malzeme, <span class="d-block">Daha Fazla Balık</span></h1>
+										<p class="mb-4">
+											İbrahim Çarkcı’da sadece işine yarayan, sahada kanıtlanmış balıkçı malzemeleri bulursun. Uzun
+											laf yok, kaliteli ekipman var.
+										</p>
+										
+									</div>
+								</div>
+					
 							</div>
 						</div>
-					
 					</div>
 				</div>
+				<div class="swiper-slide">
+					<div class="hero position-relative" style="background: url(https://images.unsplash.com/photo-1693596902372-dab05fae6431?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470); background-repeat: no-repeat; background-size: cover; background-position: center;">
+					
+						
+					
+						
+					
+						<!-- Content -->
+						<div class="container position-relative z-2">
+							<div class="row justify-content-between">
+								<div class="col-lg-8">
+									<div class="intro-excerpt">
+									<h1>Tecrübeyle Seçilmiş, <span class="d-block">Balıkla Onaylanmış</span></h1>
+									<p class="mb-4">
+										Her iğne, her misina denizden geçmeden rafa girmez. Bizim malzeme sahada konuşur.
+									</p>
+										
+									</div>
+								</div>
+					
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="hero position-relative" style="background: url(https://images.unsplash.com/photo-1526625361769-ab16cb89b155?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1474); background-repeat: no-repeat; background-size: cover; background-position: top;">
+					
+						
+					
+						
+					
+						<!-- Content -->
+						<div class="container position-relative z-2">
+							<div class="row justify-content-between">
+								<div class="col-lg-8">
+									<div class="intro-excerpt">
+									<h1>Gerçek Balıkçı, <span class="d-block">Ekipmanına Güvenir</span></h1>
+									<p class="mb-4">
+										Boş vaat değil, sağlam ekipman satıyoruz. Balığı yakalayan sen değil, hazırlığındır.
+									</p>
+										
+									</div>
+								</div>
+					
+							</div>
+						</div>
+					</div>
+				</div>
+				
 			</div>
+			
+			<div class="swiper-pagination"></div>
+		</div>
+		
+		<!-- Swiper JS -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		
+		<!-- Initialize Swiper -->
+		<script>
+			var swiper = new Swiper(".mySwiper", {
+				spaceBetween: 30,
+				effect: "fade",
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+				autoplay: {
+					delay: 2500, // 3 saniyede bir değiştir
+					disableOnInteraction: false // kullanıcı kaydırsa bile devam et
+				},
+				loop: true // sonsuz döngü
+			});
+		</script>
+		<!-- Start Hero Section -->
+			<!-- HERO SECTION -->
+			
 
 		<!-- End Hero Section -->
 
@@ -171,7 +274,7 @@
 
 					<!-- Start Column 1 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 ">
-						<a class="product-item " >
+						<a href="urun-detay.html" class="product-item " >
 							<div class="catalog">
 								<img src="fotog/20.png" class="img-fluid product-thumbnail " style="border-radius: 5px;">
 							</div>
@@ -197,7 +300,7 @@
 					<!-- End Column 1 -->
 					<!-- Start Column 1 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 ">
-						<a class="product-item " >
+						<a href="urun-detay.html" class="product-item " >
 							<div class="catalog">
 								<img src="fotog/14.png" class="img-fluid product-thumbnail " style="border-radius: 5px;">
 							</div>
@@ -224,7 +327,7 @@
 					<!-- End Column 1 -->
 					<!-- Start Column 1 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 ">
-						<a class="product-item " >
+						<a href="urun-detay.html" class="product-item " >
 							<div class="catalog">
 								<img src="fotog/1.png" class="img-fluid product-thumbnail " style="border-radius: 5px;">
 							</div>
@@ -251,7 +354,7 @@
 					<!-- End Column 1 -->
 					<!-- Start Column 1 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 ">
-						<a class="product-item " >
+						<a href="urun-detay.html" class="product-item " >
 							<div class="catalog">
 								<img src="fotog/8.png" class="img-fluid product-thumbnail " style="border-radius: 5px;">
 							</div>
@@ -290,7 +393,7 @@
 
 					<!-- Start Column 1 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 ">
-						<a class="product-item " >
+						<a href="urun-detay.html" class="product-item " >
 							<div class="catalog">
 								<img src="fotog/62.png" class="img-fluid product-thumbnail " style="border-radius: 5px;">
 							</div>
@@ -316,7 +419,7 @@
 					<!-- End Column 1 -->
 					<!-- Start Column 1 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 ">
-						<a class="product-item " >
+						<a href="urun-detay.html" class="product-item " >
 							<div class="catalog">
 								<img src="fotog/68.png" class="img-fluid product-thumbnail " style="border-radius: 5px;">
 							</div>
@@ -344,7 +447,7 @@
 					<!-- End Column 1 -->
 					<!-- Start Column 1 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 ">
-						<a class="product-item " >
+						<a href="urun-detay.html" class="product-item " >
 							<div class="catalog">
 								<img src="fotog/74.png" class="img-fluid product-thumbnail " style="border-radius: 5px;">
 							</div>
@@ -372,7 +475,7 @@
 					<!-- End Column 1 -->
 					<!-- Start Column 1 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 ">
-						<a class="product-item " >
+						<a href="urun-detay.html" class="product-item " >
 							<div class="catalog">
 								<img src="fotog/80.png" class="img-fluid product-thumbnail " style="border-radius: 5px;">
 							</div>

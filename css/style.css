@@ -134,7 +134,7 @@ z-index: 999; }
     z-index: 4; }
     @media (min-width: 992px) {
       .hero .intro-excerpt {
-        max-width: 450px; } }
+        max-width: 550px; } }
   .hero h1 {
     font-weight: 700;
     color: #ffffff;
@@ -1124,18 +1124,28 @@ margin-bottom: 0;
     position: relative;
     display: none;
     flex-wrap: wrap;
+    gap: 5px;
     width: 100%;
     box-shadow: 0 0 0 0;
     padding: 5px;
     background: #00000020;
+    
   }
     .kategoriler:hover .kategoriler-list {
       display: flex;
       transform: scale(1);
   
     }
+    .footer-section{
+      padding-bottom: 150px;
+    }
   .kategoriler-list a{
-    width: 50%;
+    width: calc(50% - 5px);
+    padding: 8px;
+    border-radius: 50px;
+    text-align: center;
+    background: #ffffff15;
+    border: 1px solid #ffffff50;
   }
     .custom-navbar{
       padding-top: 7px;
