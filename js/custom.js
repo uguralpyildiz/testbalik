@@ -1,23 +1,31 @@
-const sepetbob = document.querySelector(".sepetbob");
-const addcart = document.querySelectorAll(".addcart");
 
-// localStorage'dan mevcut sayıyı al (yoksa 0 başlat)
-let sepetCount = parseInt(localStorage.getItem("sepetCount")) || 0;
+	document.addEventListener("DOMContentLoaded", function () {
+  const counter = document.querySelector(".sepetbob");
 
-// Sayfa ilk açıldığında mevcut sayıyı göster
-sepetbob.innerHTML = `${sepetCount}`;
+	function getCart() {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+  }
 
-addcart.forEach(btn => {
-	btn.addEventListener("click", () => {
-		sepetCount++;
-		sepetbob.innerHTML = `${sepetCount}`;
-		localStorage.setItem("sepetCount", sepetCount); // kaydet
-	});
+	function updateCartCounter() {
+    const count = getCart().length;
+	if (counter) counter.textContent = count;
+  }
+
+	// İlk yüklemede güncelle
+	updateCartCounter();
+
+	// Event tetiklenirse (sepete ekle/sil)
+	window.addEventListener("cartUpdated", updateCartCounter);
+
+  // Her 1 saniyede bir otomatik kontrol et
+  setInterval(() => {
+		updateCartCounter();
+  }, 1000);
 });
-const btn = document.querySelector('.kategorilerbtn');
-btn.addEventListener('click', () => {
-	btn.classList.toggle('aktif');
-});
+
+
+
+
 
 (function() {
 	'use strict';

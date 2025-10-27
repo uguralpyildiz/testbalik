@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Garanti 3D Secure — GET Redirect Sürüm</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<style>
+		body {
+			font-family: system-ui, Arial;
+			margin: 40px;
+			background: #fafafa;
+			color: #111
+		}
+
+		.card {
+			max-width: 780px;
+			margin: 0 auto;
+			background: #fff;
+			padding: 24px;
+			border-radius: 14px;
+			box-shadow: 0 8px 24px rgba(0, 0, 0, .06)
+		}
+
+		label {
+			margin-top: 10px;
+			display: block
+		}
+
+		input {
+			width: 100%;
+			padding: 10px;
+			border-radius: 8px;
+			border: 1px solid #ccc;
+			margin-top: 4px
+		}
+
+		.row {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 10px
+		}
+
+		.btn {
+			display: inline-block;
+			margin-top: 16px;
+			background: #0b66ff;
+			color: #fff;
+			padding: 12px 18px;
+			border-radius: 10px;
+			text-decoration: none;
+			text-align: center;
+			cursor: pointer
+		}
+
+		pre {
+			background: #f6f7fb;
+			padding: 10px;
+			border-radius: 8px;
+			overflow: auto;
+			font-size: 13px
+		}
+
+		small {
+			color: #666
+		}
+	</style>
+</head>
+
+<body>
+	<div class="card">
+		<h2>Garanti 3D Secure (Frontend Only)</h2>
+		<p><small>Bu versiyon POST yerine GET redirect yapar, HTML hostinglerde 405 hatası vermez.</small></p>
+
+		<label>Tutar (TL)</label>
+		<input id="amount" type="number" step="0.01" value="1.00">
+
+		<label>Order ID</label>
+		<input id="orderId" type="text" placeholder="ORD-12345">
+
+		<div class="row">
+			<div>
+				<label>Success URL</label>
+				<input id="successUrl" type="text" value="https://ankakusugiftshop.com/?status=success">
+			</div>
+			<div>
+				<label>Failure URL</label>
+				<input id="failureUrl" type="text" value="https://uguralpyildiz.com/?status=fail">
+			</div>
+		</div>
+
+		<hr style="margin:20px 0;border:none;border-top:1px solid #eee">
+
+		<h4>Kart Bilgileri</h4>
+		<input id="cardNumber" type="text" placeholder="5549601634451019">
+		<div class="row">
+			<input id="cardExpireMonth" type="text" placeholder="02 (Ay)">
+			<input id="cardExpireYear" type="text" placeholder="25 (Yıl)">
+		</div>
+		<input id="cardCvv" type="text" placeholder="CVV (ör: 123)">
+
+		<a href="#" id="payBtn" class="btn">Ödemeye Geç (3D)</a>
+
+		<details style="margin-top:14px">
+			<summary>Debug</summary>
+			<pre id="debug">-</pre>
+		</details>
+	</div>
+
+	<script>
+		const MERCHANT_ID = "455677";
+		const TERMINAL_ID = "00105329";
+		const PROV_USER = "PROVAUT";
+		const PROV_PASS = "R9f@xLp7!mQd";
+		const GT3D_URL = "https://sanalposprov.garanti.com.tr/servlet/gt3dengine";
+		const CURRENCY_CODE = "949";
+
+		function pad2(n) { return String(n).padStart(2, '0'); }
+		function makeOrderId() { return 'ORD-' + Date.now(); }
+
+		async function sha1Hex(str) {
+			const enc = new TextEncoder().encode(str);
+			const buf = await crypto.subtle.digest('SHA-1', enc);
+			return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
+		}
+
+		async function generateHash(orderId, amount, successUrl, failUrl) {
+			const secData = await sha1Hex(PROV_PASS + TERMINAL_ID.padStart(9, '0'));
+			const hashData = await sha1Hex(orderId + TERMINAL_ID + amount + successUrl + failUrl + secData);
+			return hashData;
+		}
+
+		async function start3D() {
+			const amountTL = Number(document.getElementById("amount").value);
+			if (!amountTL || amountTL <= 0) return alert("tutar gir kanka");
+			const txnAmount = (amountTL * 100).toFixed(0);
+			const orderId = document.getElementById("orderId").value.trim() || makeOrderId();
+			const successUrl = document.getElementById("successUrl").value.trim();
+			const failUrl = document.getElementById("failureUrl").value.trim();
+			const cardNumber = document.getElementById("cardNumber").value.trim();
+			const cardMonth = document.getElementById("cardExpireMonth").value.trim();
+			const cardYear = document.getElementById("cardExpireYear").value.trim();
+			const cardCvv = document.getElementById("cardCvv").value.trim();
+
+			const hash = await generateHash(orderId, txnAmount, successUrl, failUrl);
+
+			const form = document.createElement("form");
+			form.method = "POST";
+			form.action = GT3D_URL;
+
+			const add = (n, v) => { const i = document.createElement("input"); i.type = "hidden"; i.name = n; i.value = v; form.appendChild(i); };
+
+			add("mode", "PROD");
+			add("apiversion", "512");
+			add("terminalprovuserid", PROV_USER);
+			add("terminaluserid", PROV_USER);
+			add("terminalmerchantid", MERCHANT_ID);
+			add("terminalid", TERMINAL_ID);
+			add("orderid", orderId);
+			add("customeremail", "test@example.com");
+			add("customerip", "127.0.0.1");
+			add("txnamount", txnAmount);
+			add("txncurrencycode", CURRENCY_CODE);
+			add("txninstallmentcount", "0");
+			add("successurl", successUrl);
+			add("errorurl", failUrl);
+			add("cardnumber", cardNumber);
+			add("cardexpiredatemonth", cardMonth);
+			add("cardexpiredateyear", cardYear);
+			add("cardcvv2", cardCvv);
+			add("secure3dsecuritylevel", "3D");
+			add("txntype", "sales");
+			add("secure3dhashdata", hash);
+
+			document.body.appendChild(form);
+			document.getElementById("debug").textContent = JSON.stringify({
+				orderId, txnAmount, hash, GT3D_URL
+			}, null, 2);
+			form.submit();
+		}
+
+		document.getElementById("payBtn").addEventListener("click", e => {
+			e.preventDefault();
+			start3D();
+		});
+	</script>
+</body>
+
+</html>

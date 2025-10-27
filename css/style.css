@@ -845,7 +845,7 @@ textarea {
     vertical-align: middle;
     color: rgba(0, 0, 0, 0.8); }
   .site-blocks-table tbody tr:first-child td {
-    border-top: 1px solid #3b5d50 !important; }
+    border-top: none; }
   .site-blocks-table .btn {
     background: none !important;
     color: #000000;
@@ -895,6 +895,7 @@ textarea {
           flex-direction: column;
           gap: 5px;
         }
+        
 
                 .product-price {
                   display: flex;
@@ -1218,4 +1219,250 @@ margin-bottom: 0;
   .w50re{
     width: 100%;
   }
+}
+
+.swipe-btns{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.breadcrumb-bar{
+  max-width: 1250px;
+  margin: auto;
+  border: none;
+  margin-top: 10px;
+}
+
+.cart-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 2px solid #243e5f50;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 16px 20px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+
+
+.cart-left img {
+  width: 140px;
+  height: 140px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.cart-center {
+  flex: 1;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.cart-price {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.qty-btn:hover {
+  background: #ddd;
+}
+
+.cart-qty input {
+  width: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 3px;
+  font-size: 0.9rem;
+}
+
+.cart-right {
+  display: flex;
+  
+  align-items: center;
+  gap: 10px;
+  min-width: 100px;
+}
+
+.cart-total {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.remove-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #f8f8f8;
+  border: none;
+  border-radius: 8px;
+  padding:10px 16px;font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.remove-btn:hover {
+  background: #ffe6e6;
+}
+
+.remove-btn svg {
+  fill: #c00;
+  pointer-events: none;
+}
+
+/* Mobil uyum */
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-left img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .cart-right {
+    display: flex;
+    
+  }
+
+  .cart-center {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.confirm-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.confirm-modal.active {
+  display: flex;
+}
+
+.confirm-modal-content {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 360px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  animation: popin 0.25s ease;
+}
+
+@keyframes popin {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.confirm-modal h4 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.confirm-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.confirm-modal-buttons button {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+#confirmYes {
+  background: #dc3545;
+  color: #fff;
+}
+
+#confirmYes:hover {
+  background: #c82333;
+}
+
+#confirmNo {
+  background: #f1f1f1;
+  color: #333;
+}
+
+#confirmNo:hover {
+  background: #e2e2e2;
+}
+
+.flr {
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  gap: 5px;
+}
+.quantity-box{
+  background: #fff;
+}
+.btn{
+  border-radius: 3px !important;
+}
+.btn-warning{
+  background: #000;
+  color: #fff !important;
+}
+
+.btn-warning{
+  background: #000 !important;
 }
